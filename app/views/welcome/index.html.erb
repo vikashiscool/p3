@@ -1,2 +1,8 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+
+<% 1.upto(10).each do |n| %>
+	<p>
+		<% video_id = YouTubeAddy.extract_video_id ("#{ @results[n]["link"][0]["href"] } ") %>
+		<embed width="420" src="http://www.youtube.com/embed/#{video_id}">
+	</p>
+<% end %>
+

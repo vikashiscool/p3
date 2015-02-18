@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  def index
-  end
 
   def show
   	@user = User.find(params[:id])
@@ -19,5 +17,22 @@ class UsersController < ApplicationController
   def edit
   end
 
+  # def edit
+  #   render 'edit'
+  # end
+
+  # def update    
+  #   authorize @comment
+  #   if @comment.update(comment_params)
+  #     redirect_to @comment
+  #   else
+  #     render :edit
+  #   end
+  # end
+
+private
+  def user_params
+    params.require(:user)
+  end
 
 end

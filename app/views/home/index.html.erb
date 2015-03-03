@@ -1,7 +1,13 @@
-<h1>Teach me to code</h1>
-<p>Because YouTube is (often) your best resource</p>
+<h1>Teach me how to code</h1>
+<br>
+<!-- SEARCH BOX -->
+<div>
+<%= form_tag search_path, :method => 'get', class: 'form-group' do %>
+  <p>
+    <%= text_field_tag :search, params[:search], class: 'form-control', :placeholder => "e.g. Ruby on rails, Angular.js, etc.", :size => 40 %>
+    <%= submit_tag "Search", class: "btn btn-warning btn-lg" %>
+  </p>
+<% end %>
+</div>
 
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  How it works
-</button>
 

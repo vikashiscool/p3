@@ -2,13 +2,25 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  get '/search', to: 'videos#search'
+
   devise_for :users
 
   #Resources
-  resources :users
+  resources :users do 
+    resources :favorites, only: [:index, :create, :destroy]
+  end
+
+  # Hacking delete redirect
+  delete '/users/:id/favorites', to: 'favorites#index'
+
   resources :favorites do
     resources :comments
   end
+
+  # resources :favorites, only: [:index, :create, :destroy] do
+  #   resources :comments
+  # end
   
 
   # The priority is based upon order of creation: first created -> highest priority.

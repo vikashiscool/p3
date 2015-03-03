@@ -6,11 +6,11 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
 <%= render 'layouts/flash' %>
 
-<%= render 'layouts/authlinks' %>
+<%= render 'layouts/navigation' %>
 
 <%= yield %>
 

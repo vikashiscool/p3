@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.easing.min
+//= require bootstrap.min
+//= require grayscale
 //= require youtube.js
 //= require turbolinks
 //= require_tree .

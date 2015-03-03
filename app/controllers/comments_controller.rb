@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
 
 		if @comment.save 
 			flash[:success] = "Comment saved."
-			redirect_to favorite_path(@favorite) 
+			redirect_to favorites_path
 		end
 	end
 

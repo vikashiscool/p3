@@ -27,7 +27,8 @@ class FavoritesController < ApplicationController
 		# Find favorite
 		favorite = Favorite.find(params[:id])
 		# Delete favorite from user's favorites
-		current_user.favorites.delete(favorite)
+		favorite.destroy
+
 		# Redirect back to user's favorites page
 		# redirect_to :back, method: :get # still not reloading...
 		redirect_to user_favorites_path(current_user.id)

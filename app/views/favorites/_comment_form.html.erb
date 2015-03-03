@@ -1,12 +1,20 @@
 <% @favorites.each do |favorite| %>
-	<h2>Add a comment:</h2>
+<div class="fav-form">
 	<%= form_for([favorite, favorite.comments.build]) do |f| %>
 		<p>
-		 <%= f.label :body %><br>
-		 <%= f.text_area :body %>
+		 <%= f.text_area :body, :class => 'fav-form-text' %>
 		</p>
 		<p>
 		 <%= f.submit %>
 		</p>
 	<% end %>
+</div>
+
+
+<% favorite.comments.each do |comment| %>
+  <p>
+    <%= comment.body %>
+  </p>
+<% end %>
+
 <% end %>

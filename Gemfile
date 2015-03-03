@@ -29,6 +29,7 @@ gem 'typhoeus'
 
 gem 'youtube_addy'
 
+gem "font-awesome-rails"
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'autoprefixer-rails'
 

@@ -14,3 +14,25 @@
 .btn.video-favs {
 	margin-bottom: 10px;
 }
+
+.video-favs {
+	float: right;
+}
+
+/* Three divs side by side */
+.custom-comment-form {
+	float: left;
+}
+
+.custom-comment-form p {
+	margin: 0px;
+}
+
+.videos {
+	float: left;
+}
+
+.center-video-divs {
+	display: table;
+	margin: 0 auto;
+}

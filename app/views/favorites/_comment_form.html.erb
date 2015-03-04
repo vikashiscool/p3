@@ -1,20 +1,20 @@
-<% @favorites.each do |favorite| %>
-<div class="fav-form">
-	<%= form_for([favorite, favorite.comments.build]) do |f| %>
-		<p>
-		 <%= f.text_area :body, :class => 'fav-form-text' %>
-		</p>
-		<p>
-		 <%= f.submit 'Submit', :class => 'btn btn-default' %>
-		</p>
+<div class="custom-comment-form">
+	<% @favorites.reverse.each do |favorite| %>
+		<div class="fav-form">
+			<%= form_for([favorite, favorite.comments.build]) do |f| %>
+				<p>
+				 <%= f.text_area :body, :class => 'fav-form-text' %>
+				</p>
+				<p>
+				 <%= f.submit 'Submit', :class => 'btn btn-default' %>
+				</p>
+			<% end %>
+			<br>
+		<% favorite.comments.reverse.each do |comment| %>
+		  <p>
+		    <%= comment.body %>
+		  </p>
+		<% end %>
+		</div>
 	<% end %>
 </div>
-
-
-<% favorite.comments.each do |comment| %>
-  <p>
-    <%= comment.body %>
-  </p>
-<% end %>
-
-<% end %>
